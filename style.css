@@ -1,0 +1,285 @@
+/* +++++++++++++++++++++++++++ GLOBAL ++++++++++++++++++++++++++++ */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 50px;
+}
+
+p {
+    font-family: "Poppins", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Montserrat", sans-serif;
+}
+
+.dot {
+    margin: auto;
+    width: fit-content;
+    background-image: url(images/dots.png);
+    background-repeat: repeat;
+
+    h3 {
+        position: relative;
+        bottom: 10px;
+    }
+}
+
+/* +++++++++++++++++++++++++++ NAVBAR ++++++++++++++++++++++++++++ */
+.nav-link::before {
+    content: '';
+    background-color: #000;
+    height: 2px;
+    position: absolute;
+    bottom: 5px;
+    width: 0;
+}
+
+.navbar-nav .nav-link.active:before {
+    width: 70%;
+    transition: width 1s;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.navbar-toggler {
+    border: transparent;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
+/* +++++++++++++++++++++++++++ HOME ++++++++++++++++++++++++++++ */
+#home {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/bg-783.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+/* +++++++++++++++++++++++++++ ABOUT ++++++++++++++++++++++++++++ */
+#about {
+    .about-dot {
+        background-image: url(images/dots.png);
+        background-repeat: repeat;
+
+        img {
+            position: relative;
+            left: 10%;
+            bottom: 30px;
+        }
+    }
+
+    .space {
+        word-spacing: 2px;
+        letter-spacing: 1px;
+    }
+}
+
+/* +++++++++++++++++++++++++++ SERVICES&CONTACT ++++++++++++++++++++++++++++ */
+#services,
+#contact {
+    .item {
+        i {
+            background-color: #eee;
+            transition: background-color 1s, color 1s;
+        }
+
+        &:hover i {
+            color: #fff;
+            background-color: #000;
+        }
+    }
+}
+
+/* +++++++++++++++++++++++++++ PORTFOLIO ++++++++++++++++++++++++++++ */
+#portfolio {
+    .nav-link::before {
+        content: '';
+        background-color: #000;
+        height: 2px;
+        position: absolute;
+        bottom: 5px;
+        width: 0;
+    }
+
+    .nav-pills .nav-link.active,
+    .nav-pills .show>.nav-link {
+        color: #000;
+        background-color: white;
+    }
+
+    .nav-pills .nav-link.active:before {
+        width: 70%;
+        transition: width 1s;
+    }
+
+    .nav-pills .nav-link {
+        color: #000;
+        border-radius: 0;
+    }
+}
+
+.btn-close:focus {
+    box-shadow: none;
+}
+
+.element {
+    position: relative;
+
+    .inner {
+        position: absolute;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+        top: 20px;
+        transition: all 1s;
+        left: 15px;
+        right: 15px;
+        bottom: 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        opacity: 0;
+
+        .info {
+            margin-top: 10px;
+            transition: margin-top 1s;
+
+            i {
+                background-color: #000;
+                color: #fff;
+                border: 1px solid #000;
+
+                &:hover {
+                    background-color: #fff !important;
+                    color: #000;
+                }
+            }
+        }
+
+        .move {
+            margin-bottom: 10px;
+            transition: margin-bottom 1s;
+        }
+    }
+
+    &:hover .inner {
+        opacity: 1;
+        top: 5px;
+    }
+
+    &:hover .info {
+        margin-top: 0;
+    }
+
+    &:hover .move {
+        margin-bottom: 0;
+    }
+}
+
+/* +++++++++++++++++++++++++++ CLIENTS ++++++++++++++++++++++++++++ */
+#clients {
+    img {
+        margin-block: 30px;
+        width: 80px;
+    }
+}
+
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: grey;
+    position: relative;
+    top: 50px;
+
+    &:not(.active):hover {
+        background-color: rgb(61, 60, 60);
+    }
+}
+
+/* +++++++++++++++++++++++++++ TEAM ++++++++++++++++++++++++++++ */
+.team {
+    background-color: #343434;
+    position: relative;
+
+    .images {
+        img {
+            transition: transform 1s;
+        }
+
+        &:hover img {
+            transform: scale(1.1);
+        }
+    }
+
+    .layer {
+        cursor: pointer;
+        position: absolute;
+        background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+        top: 5px;
+        left: 5px;
+        right: 5px;
+        bottom: 90px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transform: scale(0.5);
+        opacity: 0;
+        transition: all 1s;
+
+        a {
+            background-color: #000;
+            color: #fff;
+            transition: all 1s;
+            border: #000 solid 1px;
+
+            &:hover {
+                background-color: #fff;
+                color: #000;
+            }
+        }
+    }
+
+    .images:hover .layer,
+    &:hover a,
+    &:hover .layer {
+        transform: rotateY(180deg);
+        opacity: 1;
+        flex-direction: row-reverse;
+    }
+}
+
+/* +++++++++++++++++++++++++++ CONTACT ++++++++++++++++++++++++++++ */
+input,
+textarea {
+    background-color: #eee;
+    outline: 0;
+    border: 0;
+}
+
+footer {
+    background-color: #343434;
+    color: #748182;
+}
+
+.submit-contact,
+.download-about {
+    text-decoration: none;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 10px;
+    transition: all 1s;
+    border: #000 solid 1px;
+
+    &:hover {
+        background-color: #fff;
+        color: #000;
+    }
+}
